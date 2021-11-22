@@ -1,10 +1,7 @@
 #ifndef stateMachine_included
 #define stateMachine_included
 
-
-
 //state variable
-
 extern unsigned char state;
 
 
