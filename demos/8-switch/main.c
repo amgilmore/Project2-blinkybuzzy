@@ -1,4 +1,5 @@
-#include <msp430.h>
+
+p#include <msp430.h>
 #include "libTimer.h"
 
 #define LED_RED BIT0               // P1.0
@@ -15,10 +16,10 @@ void main(void)
   P1DIR |= LEDS;
   P1OUT &= ~LEDS;		/* leds initially off */
   
-  P1REN |= SWITCHES;		/* enables resistors for switches */
-  P1IE |= SWITCHES;		/* enable interrupts from switches */
-  P1OUT |= SWITCHES;		/* pull-ups for switches */
-  P1DIR &= ~SWITCHES;		/* set switches' bits for input */
+  P2REN |= SWITCHES;		/* enables resistors for switches */
+  P2IE |= SWITCHES;		/* enable interrupts from switches */
+  P2OUT |= SWITCHES;		/* pull-ups for switches */
+  P2DIR &= ~SWITCHES;		/* set switches' bits for input */
 
   or_sr(0x18);  // CPU off, GIE on
 } 
