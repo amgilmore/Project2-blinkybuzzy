@@ -14,35 +14,17 @@ CC              = msp430-elf-gcc
 
 AS              = msp430-elf-as
 
-
-
 all: button.elf
 
-
-
 #additional rules for files
-
-
 
 main.elf: ${COMMON_OBJECTS} watchDog_handler.o stateMachines.o buzzer.o port2_handler.o led.o switches.o main.o timerLib/libTimer.a
 
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
-
-
-
-
-
-
 loadTimer:
 
 	(cd timerLib && make all)
-
-
-
-
-
-
 
 load: loadTimer main.elf
 

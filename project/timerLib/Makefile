@@ -20,21 +20,20 @@ AR              = msp430-elf-ar
 
 libTimer.a: clocksTimer.o sr.o
 
-	    $(AR) crs $@ $^
+	$(AR) crs $@ $^
 
 
 
 install: libTimer.a
 
-	 mkdir -p ../h ../lib
+	mkdir -p ../h ../lib
 
-	 mv $^ ../lib
+	mv $^ ../lib
 
-	 cp *.h ../h
+	cp *.h ../h
 
 
 
 clean:
 
-	rm -f timerLib.a *.o
-	
+	rm -f libTimer.a *.o
